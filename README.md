@@ -11,3 +11,8 @@ Individual:
 Multiple:
 # ![Example 2](stacked-horizontal-barchart/images/mtest.png)
 
+
+## NumerifyScale.r
+
+Function to turn column with data like "A1" or "Strongly agree" into numbers to prep for analysis.
+
