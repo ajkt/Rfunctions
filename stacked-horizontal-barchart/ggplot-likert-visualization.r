@@ -106,8 +106,10 @@ singleItemLikert <- function(this.df, my.title, output.file) {
     coord_flip() +
     theme(plot.title = element_text(size=10, hjust=0.5)) + 
     theme(legend.position = "bottom", legend.text = element_text(size=8)) +
-    theme(text = element_text(family="Linux Libertine"))
+    theme(text = element_text(family="Linux Libertine O"))
   ggsave(output.file, width=10, height=2)
+  
+  #embed_fonts("test.png", outfile="test_fonts_embedded.png")
   
 }
 
@@ -205,7 +207,7 @@ multiItemLikert <- function(this.ld, my.titles, output.file) {
     coord_flip() +
     theme(plot.title = element_text(size=10, hjust=0.5)) + 
     theme(legend.position = "bottom", legend.text = element_text(size=8)) +
-    theme(text = element_text(family="Linux Libertine"))
+    theme(text = element_text(family="Linux Libertine O"))
   ggsave(output.file, width=10, height=4)
   
 }
@@ -244,7 +246,19 @@ levels(mexd[,1])
 levels(mexd[,2])
 levels(mexd[,3])
 
-# all factor levels in correct order
+# if factor levels are missing, for example A1 and A4:
+# mexd[,1] <- as.factor(mexd[,1])
+# levels(mexd[,1])
+# levels(mexd[,1]) <- c(levels(mexd[,1]), "A1","A4")
+# levels(mexd[,1])
+
+# if factors need reordering:
+# mexd[,1] = factor(mexd[,1], levels(mexd[,1])[c(5,2,4,7,3,1,6)]) 
+# levels(mexd[,1])
+
+
+
+# then once all factor levels in correct order:
 
 mlexd <- likert(as.data.frame(mexd))
 mlexd
