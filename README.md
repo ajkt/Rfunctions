@@ -14,5 +14,5 @@ Multiple:
 
 ## NumerifyScale.r
 
-Function to turn column with data like "A1" or "Strongly agree" into new numbered column to prep for banalysis.
+Function to turn column with data like "A1" or "Strongly agree" into new numbered column to prep for analysis.
 
